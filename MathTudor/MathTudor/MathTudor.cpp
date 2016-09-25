@@ -17,8 +17,15 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[]) {
 
+	// Declarations to identify what is being used from standard library.
+	using std::cout;
+	using std::endl;
+	using std::setw;
+
 	// Declare variables needed for program
-	double X, Y, Z;
+	double X;
+	double Y;
+	double Z;
 
 	unsigned seed = time(0);
 	srand(seed);
@@ -33,14 +40,22 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	Y = 1 + rand() % 350;
 	Z = X + Y;
 
-	// Display the two random numbers to be solved.
+	// Display the two random numbers to be solved, with numbers formatted properly.
 	cout << "\n";
-	cout << X << " + " << Y << " = " << endl;
+	cout << setw(5) << X << endl;
+	cout << setw(5) << Y << endl;
+	cout << "+";
+	cout << "_____" << endl;
 
 	// Pause to allow student an opportunity to solve the problem.
 	system("pause");
 
-	// Display the answer to the problem.
-	cout << X << " + " << Y << " = " << Z << endl;
+	// Display the answer to the problem, with numbers formatted properly.
+	cout << "\n";
+	cout << setw(5) << X << endl;
+	cout << setw(5) << Y << endl;
+	cout << "+";
+	cout << "_____" << endl;
+	cout << setw(5) << Z << endl;
 	return 0;
 }
